@@ -22,6 +22,7 @@
   <xacro:include filename="$(find raspimouse_description)/urdf/sensors/lightsens.urdf.xacro" />
   <xacro:include filename="$(find raspimouse_description)/urdf/sensors/lrf.urdf.xacro" />
   <xacro:include filename="$(find raspimouse_description)/urdf/raspimouse.gazebo_ros2_control.xacro" />
+  <xacro:include filename="$(find raspimouse_description)/urdf/hac_camera.xacro" />
 
   <!-- =============== Link & Joint =============== -->
   <!-- Base -->
@@ -74,6 +75,12 @@
       name_left_wheel_joint="left_wheel_joint"
       config_file_package="hac_demo_bots"
       config_file_path="config/gazebo_controllers.yaml" />
+
+    <xacro:hac_camera
+      parent="base_link">
+      <origin xyz="0.0 0.0 0.2" rpy="0 0 0"/>
+    </xacro:hac_camera>
+
   </xacro:if>
 
   <!-- <xacro:if value="$(arg gazebo_plugin)">
