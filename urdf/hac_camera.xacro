@@ -41,7 +41,7 @@
     </link>
 
     <joint type="fixed" name="camera_joint">
-      <origin xyz="0.05 0.0 0.05" rpy="0 0 0"/>
+      <origin xyz="0.05 0.0 0.05" rpy="0 0.5236 0"/>
       <child link="camera_link"/>
       <parent link="camera_pole"/>
     </joint>
