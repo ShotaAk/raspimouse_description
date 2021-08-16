@@ -24,6 +24,7 @@
   <xacro:include filename="$(find raspimouse_description)/urdf/raspimouse.gazebo_ros2_control.xacro" />
   <xacro:include filename="$(find raspimouse_description)/urdf/hac_camera.xacro" />
   <xacro:include filename="$(find raspimouse_description)/urdf/camera_c270n.xacro" />
+  <xacro:include filename="$(find raspimouse_description)/urdf/camera_raspi_wide_angle.xacro" />
 
   <!-- =============== Link & Joint =============== -->
   <!-- Base -->
@@ -83,7 +84,8 @@
     </xacro:hac_camera>
 
     <!-- ここで好きなカメラをコメント解除で選択する -->
-    <xacro:camera_c270n/>
+    <!-- <xacro:camera_c270n/> -->
+    <xacro:camera_raspi_wide_angle/>
 
   </xacro:if>
 
