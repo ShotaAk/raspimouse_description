@@ -46,51 +46,5 @@
       <parent link="camera_pole"/>
     </joint>
 
-    <gazebo reference="camera_link">
-      <material>Gazebo/Red</material>
-      <sensor type="camera" name="camera1">
-        <update_rate>30.0</update_rate>
-        <camera name="head">
-          <!-- 視野角 -->
-          <!-- 55deg = 0.9599 rad -->
-          <horizontal_fov>0.9599</horizontal_fov>
-
-          <!-- 解像度とフォーマット -->
-          <image>
-            <width>1280</width>
-            <height>720</height>
-            <format>R8G8B8</format>
-            <!-- <format>B8G8R8</format> -->
-          </image>
-
-          <!-- どれだけの範囲（距離）を認識できるか -->
-          <clip>
-            <near>0.02</near>
-            <far>300</far>
-          </clip>
-
-          <!-- ノイズを大きくすれば、ノイズに強いプログラムを作れる -->
-          <noise>
-            <type>gaussian</type>
-            <!-- Noise is sampled independently per pixel on each frame.
-                That pixel's noise value is added to each of its color
-                channels, which at that point lie in the range [0,1]. -->
-            <mean>0.0</mean>
-            <stddev>0.007</stddev>
-          </noise>
-        </camera>
-
-        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-          <camera_name>c270n</camera_name>
-          <frame_name>camera_link</frame_name>
-          <!-- <distortionK1>0.0</distortionK1>
-          <distortionK2>0.0</distortionK2>
-          <distortionK3>0.0</distortionK3>
-          <distortionT1>0.0</distortionT1>
-          <distortionT2>0.0</distortionT2> -->
-        </plugin>
-      </sensor>
-    </gazebo>
-
   </xacro:macro>
 </robot>
