@@ -80,7 +80,7 @@
 
     <xacro:hac_camera
       parent="base_link">
-      <origin xyz="0.0 0.0 0.2" rpy="0 0 0"/>
+      <origin xyz="0.0 0.0 0.3" rpy="0 0 0"/>
     </xacro:hac_camera>
 
     <!-- ここで好きなカメラをコメント解除で選択する -->
